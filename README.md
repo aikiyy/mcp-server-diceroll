@@ -60,6 +60,12 @@ uv run python server.py
 2. **roll_dice** - サイコロを振ります（デフォルトは6面体のサイコロを1回）
 3. **greeting://{name}** - 指定された名前に対する挨拶メッセージを生成します
 
+## 参考資料
+
+- [サイコロから始めるModel Context Protocol (MCP): 生成AIと外部ツールを繋ぐためのプロトコル](https://zenn.dev/herp_inc/articles/00917098b3ffd3)
+- [Anthropic MCP公式発表](https://www.anthropic.com/news/model-context-protocol)
+- [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
+
 ## 例
 
 サーバーにリクエストを送信する方法については、MCP クライアントのドキュメントを参照してください。
