@@ -1,6 +1,7 @@
 # server.py
 from mcp.server.fastmcp import FastMCP
 import random
+import uuid
 
 # Create an MCP server
 mcp = FastMCP("diceroll")
@@ -28,6 +29,18 @@ def roll_dice(faces: int = 6, rolls: int = 1) -> str:
 
     expr = " + ".join(str(r) for r in result)
     return f"{expr} = {total}"
+
+
+# Add a UUID generation tool
+@mcp.tool()
+def generate_uuid(version: int = 4) -> str:
+    """Generate a random UUID"""
+    if version == 4:
+        return str(uuid.uuid4())
+    elif version == 1:
+        return str(uuid.uuid1())
+    else:
+        raise ValueError(f"UUID version {version} not supported")
 
 
 # Add a dynamic greeting resource
